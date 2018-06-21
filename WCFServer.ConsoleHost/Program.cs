@@ -23,8 +23,6 @@ namespace WCFServer.ConsoleHost
             //Console.WriteLine("WCF服务启动中...");
             Log4Net.Info(typeof(Program), "WCF服务启动中...", true);
 
-            
-
             List<ServiceType> serviceTypeList = new List<ServiceType>();
             ServiceType serviceType = new ServiceType
             {
@@ -41,7 +39,7 @@ namespace WCFServer.ConsoleHost
             //serviceTypeList.Add(serviceType);
             serviceTypeList = ServiceProvider.Instance.ServiceTypesProvider();
             ServiceProvider.Instance.AddService(serviceTypeList);
-
+            Console.WriteLine("按Q键退出程序...");
             while (Console.ReadLine() != "Q")
                 continue;
         }

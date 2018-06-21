@@ -60,115 +60,49 @@ namespace WCFServer.Manager.Provider
             }
             #endregion
 
-            foreach (var item in pairs)
-            {
-                ServiceType serviceType = new ServiceType
-                {
-                    IntfType = item.Key,
-                    ImplType = item.Value,
-                    WcfConfig = new WcfConfig
-                    {
-                        IP = ip,
-                        Port = port.ToString(),
-                        Endpoint = endpoint
-                    }
-                };
-                serviceTypeList.Add(serviceType);
-            }
-
             #region 2.本地与数据库融合
-            #endregion
-
             using (var db = new DapperExContext())
             {
                 var data = db.Query<SysServerInfoMst>().ToList();
 
-                #region paris为空 || data为空
-                if (data.Count == 0 || pairs.Count == 0)
+                // 【删除】找出DB中存在,实际接口不存在的数据,并删除DB的该条记录
+                foreach (var item in data)
                 {
-                    #region @1.paris为空,data全部删除
-                    if (pairs.Count == 0)
-                        foreach (var item in data)
-                        {
-                            var delete = db.Delete<SysServerInfoMst>(x => x.IntfName == item.IntfName && x.ImplName == item.ImplName);
-                        }
-                    #endregion
-
-                    #region @2.data为空,paris全部插入
-                    if (data.Count == 0)
-                        foreach (var item in pairs)
-                        {
-                            SysServerInfoMst sysServerInfo = new SysServerInfoMst
-                            {
-                                IntfName = item.Key.Name,
-                                ImplName = item.Value.Name,
-                                ServiceName = item.Value.Name + "服务接口",
-                                RowVersion = 1,
-                                Status = "1",
-                                CreateUser = "liweipeng",
-                                UpdateUser = "liweipeng",
-                                CreateTime = DateTime.Now,
-                                UpdateTime = DateTime.Now,
-                                Ip = "localhost",
-                                Port = 1028,
-                                Endpoint = "json"
-                            };
-                            var insert = db.Insert<SysServerInfoMst>(sysServerInfo);
-                        }
-                    #endregion
-                }
-                #endregion 
-                #region 都不为空
-                else
-                {
-                    #region @1.添加 ==> 以paris为主,data中没有的添加
-                    List<SysServerInfoMst> serverInfosAdd = new List<SysServerInfoMst>();
-                    foreach (var p in pairs)
+                    if (pairs.Count(x => x.Key.Name == item.IntfName && x.Value.Name == item.ImplName) == 0)
                     {
-                        foreach (var d in data.Where(x => x.IntfName == p.Key.Name && x.ImplName == p.Value.Name))
-                        {
-                            serverInfosAdd.Add(d);
-                        }
-                    }
-                    
-
-                    #endregion
-
-                    #region @2.删除 ==> 以data为主,paris中没有的删除
-                    #endregion
-                }
-                #endregion
-
-                // 增加 => 利用pairs查找db
-                if (data.Count != 0)
-                {
-                    foreach (var d in data)
-                    {
-                        foreach (var item in pairs.Where(x => x.Key.Name != d.IntfName || x.Value.Name != d.ImplName))
-                        {
-                            SysServerInfoMst sysServerInfo = new SysServerInfoMst
-                            {
-                                IntfName = item.Key.Name,
-                                ImplName = item.Value.Name,
-                                ServiceName = item.Value.Name + "服务接口",
-                                RowVersion = 1,
-                                Status = "1",
-                                CreateUser = "liweipeng",
-                                UpdateUser = "liweipeng",
-                                CreateTime = DateTime.Now,
-                                UpdateTime = DateTime.Now,
-                                Ip = "localhost",
-                                Port = 1028,
-                                Endpoint = "json"
-                            };
-                            //var insert = db.Insert<SysServerInfoMst>(sysServerInfo);
-                        }
+                        var delete = db.Delete<SysServerInfoMst>(x => x.IntfName == item.IntfName && x.ImplName == item.ImplName);
                     }
                 }
-                else
+
+                // 【新增】数据到DB、【设置】DB数据到本地
+                foreach (var item in pairs)
                 {
-                    foreach (var item in pairs)
+                    ServiceType serviceType = new ServiceType
                     {
+                        IntfType = item.Key,
+                        ImplType = item.Value,
+                        LogAction = Console.WriteLine
+                    };
+
+                    var tmpPairs = data.Where(x => x.IntfName == item.Key.Name && x.ImplName == item.Value.Name).ToList();
+                    if (tmpPairs.Count != 0)
+                    {
+                        serviceType.WcfConfig = new WcfConfig
+                        {
+                            IP = tmpPairs.FirstOrDefault().Ip,
+                            Port = tmpPairs.FirstOrDefault().Port.ToString(),
+                            Endpoint = tmpPairs.FirstOrDefault().Endpoint
+                        };
+                    }
+                    else
+                    {
+                        serviceType.WcfConfig = new WcfConfig
+                        {
+                            IP = ip,
+                            Port = port.ToString(),
+                            Endpoint = endpoint
+                        };
+
                         SysServerInfoMst sysServerInfo = new SysServerInfoMst
                         {
                             IntfName = item.Key.Name,
@@ -184,19 +118,12 @@ namespace WCFServer.Manager.Provider
                             Port = 1028,
                             Endpoint = "json"
                         };
-                        //var insert = db.Insert<SysServerInfoMst>(sysServerInfo);
+                        var insert = db.Insert<SysServerInfoMst>(sysServerInfo);
                     }
-                }
-
-                // 删除 => 利用db查找pairs
-                foreach (var kv in pairs)
-                {
-                    foreach (var item in data.Where(x => x.IntfName != kv.Key.Name || x.ImplName != kv.Value.Name))
-                    {
-                        //var delete = db.Delete<SysServerInfoMst>(x => x.IntfName == item.IntfName && x.ImplName == item.ImplName);
-                    }
+                    serviceTypeList.Add(serviceType);
                 }
             }
+            #endregion
 
             return serviceTypeList;
         }
