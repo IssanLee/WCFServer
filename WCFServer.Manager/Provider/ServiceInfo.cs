@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ServiceModel;
 
-namespace WCFServer.Manager.Config
+namespace WCFServer.Manager.Provider
 {
-    public class ServiceType
+    public class ServiceInfo
     {
         /// <summary>
         /// 接口类型
@@ -26,6 +23,11 @@ namespace WCFServer.Manager.Config
         /// <summary>
         /// 服务相关配置
         /// </summary>
-        public WcfConfig WcfConfig { get; set; }
+        public ServiceConfig Config { get; set; }
+
+        /// <summary>
+        /// 服务主机
+        /// </summary>
+        public ServiceHost Host { get; set; }
     }
 }

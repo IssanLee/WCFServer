@@ -71,7 +71,7 @@
     <Compile Include="Models\Command\NotifyTaskCompletion.cs" />
     <Compile Include="Models\Command\RelayCommand.cs" />
     <Compile Include="Models\DataProvider.cs" />
-    <Compile Include="Models\Data\ServiceInfo.cs" />
+    <Compile Include="Models\Data\InterfaceInfo.cs" />
     <Compile Include="Models\LockDialogContent.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

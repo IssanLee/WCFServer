@@ -1,47 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
+using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Description;
-using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using WCFServer.Common;
-using WCFServer.Manager.Config;
-using WCFServer.Service;
+using WCFServer.Common.Base;
 using WCFServer.Data.DapperEx.Context;
 using WCFServer.Data.DapperEx.Entities;
+using WCFServer.Manager.Provider;
+using WCFServer.Service;
 
-namespace WCFServer.Manager.Provider
+namespace WCFServer.Manager
 {
     /// <summary>
-    /// 服务提供类
+    /// 服务管理类
     /// </summary>
-    public class ServiceProvider
+    public class ServiceManager
     {
-        private ServiceProvider() { }
-
         /// <summary>
-        /// 服务提供类实例(单例)
+        /// 私有化构造方法
         /// </summary>
-        public static ServiceProvider Instance => Singleton<ServiceProvider>.Instance ?? (Singleton<ServiceProvider>.Instance = new ServiceProvider());
-
-        List<ServiceHost> serviceHosts = new List<ServiceHost>();
+        private ServiceManager() { }
 
         /// <summary>
-        /// ServiceType提供
+        /// 服务管理类实例(单例)
+        /// </summary>
+        public static ServiceManager Instance => Singleton<ServiceManager>.Instance ?? (Singleton<ServiceManager>.Instance = new ServiceManager());
+        
+        /// <summary>
+        /// 服务接口提供器
         /// </summary>
         /// <returns></returns>
-        public List<ServiceType> ServiceTypesProvider()
+        public List<ServiceInfo> ServiceProvider()
         {
-            List<ServiceType> serviceTypeList = new List<ServiceType>();
+            List<ServiceInfo> serviceInfoList = new List<ServiceInfo>();
 
+            #region 0.默认数据
             string ip = "localhost";
             int port = 1028;
             string endpoint = "json";
+            #endregion
 
             #region 1.获取所有的服务接口及其实现类
-            // type1[Key]:Intf, type2[value]:Impl 
             Dictionary<Type, Type> pairs = new Dictionary<Type, Type>();
-            var types = GetType(typeof(IBaseContract));
+            var types = TypeHelper.GetIntfChildrens(typeof(IBaseContract));
             bool isPair = true;
             Type type1 = null, type2 = null;
             foreach (var type in types)
@@ -77,7 +81,7 @@ namespace WCFServer.Manager.Provider
                 // 【新增】数据到DB、【设置】DB数据到本地
                 foreach (var item in pairs)
                 {
-                    ServiceType serviceType = new ServiceType
+                    ServiceInfo serviceInfo = new ServiceInfo
                     {
                         IntfType = item.Key,
                         ImplType = item.Value,
@@ -87,20 +91,22 @@ namespace WCFServer.Manager.Provider
                     var tmpPairs = data.Where(x => x.IntfName == item.Key.Name && x.ImplName == item.Value.Name).ToList();
                     if (tmpPairs.Count != 0)
                     {
-                        serviceType.WcfConfig = new WcfConfig
+                        serviceInfo.Config = new ServiceConfig
                         {
                             IP = tmpPairs.FirstOrDefault().Ip,
                             Port = tmpPairs.FirstOrDefault().Port.ToString(),
-                            Endpoint = tmpPairs.FirstOrDefault().Endpoint
+                            Endpoint = tmpPairs.FirstOrDefault().Endpoint,
+                            ServiceName = tmpPairs.FirstOrDefault().ServiceName
                         };
                     }
                     else
                     {
-                        serviceType.WcfConfig = new WcfConfig
+                        serviceInfo.Config = new ServiceConfig
                         {
                             IP = ip,
                             Port = port.ToString(),
-                            Endpoint = endpoint
+                            Endpoint = endpoint,
+                            ServiceName = item.Value.Name + "服务接口"
                         };
 
                         SysServerInfoMst sysServerInfo = new SysServerInfoMst
@@ -120,45 +126,27 @@ namespace WCFServer.Manager.Provider
                         };
                         var insert = db.Insert<SysServerInfoMst>(sysServerInfo);
                     }
-                    serviceTypeList.Add(serviceType);
+                    serviceInfoList.Add(serviceInfo);
                 }
             }
             #endregion
 
-            return serviceTypeList;
-        }
-
-        private static IEnumerable<Type> GetType(Type interfaceType)
-        {
-            foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                foreach (var type in assembly.GetTypes())
-                {
-                    foreach (var t in type.GetInterfaces())
-                    {
-                        if (t == interfaceType)
-                        {
-                            yield return type;
-                            break;
-                        }
-                    }
-                }
-            }
+            return serviceInfoList;
         }
 
         /// <summary>
-        /// 添加服务
+        /// 开启服务
         /// </summary>
-        /// <param name="serviceTypes"></param>
-        public void AddService(List<ServiceType> serviceTypeList)
+        /// <param name="serviceInfoList">服务接口集合</param>
+        public void OpenService(List<ServiceInfo> serviceInfoList)
         {
-            foreach (var serviceType in serviceTypeList)
+            foreach (var serviceInfo in serviceInfoList)
             {
-                Action<string> logAction = serviceType.LogAction;
+                Action<string> logAction = serviceInfo.LogAction;
                 logAction = logAction ?? (msg => { });
-                string serviceName = serviceType.ImplType.Name;
-                string endpointAddress = string.Format(serviceType.WcfConfig.RomoteFormat, serviceType.WcfConfig.IP, serviceType.WcfConfig.Port, serviceName);
-                ServiceHost host = new ServiceHost(serviceType.ImplType, new Uri(endpointAddress));
+                string serviceName = serviceInfo.ImplType.Name;
+                string endpointAddress = string.Format(serviceInfo.Config.RomoteFormat, serviceInfo.Config.IP, serviceInfo.Config.Port, serviceName);
+                ServiceHost host = new ServiceHost(serviceInfo.ImplType, new Uri(endpointAddress));
 
                 ServiceMetadataBehavior behavior = host.Description.Behaviors.Find<ServiceMetadataBehavior>();
                 if (behavior == null)
@@ -173,7 +161,7 @@ namespace WCFServer.Manager.Provider
                     };
                     host.Description.Behaviors.Add(behavior);
                 }
-                ServiceEndpoint endpoint = host.AddServiceEndpoint(serviceType.IntfType, new WebHttpBinding(), serviceType.WcfConfig.Endpoint);
+                ServiceEndpoint endpoint = host.AddServiceEndpoint(serviceInfo.IntfType, new WebHttpBinding(), serviceInfo.Config.Endpoint);
                 // 设置wcf支持ajax调用,仅适用于WebHttpBinding
                 //endpoint.Behaviors.Add(new WebScriptEnablingBehavior());
                 WebHttpBehavior webHttpBehavior = new WebHttpBehavior
@@ -185,13 +173,31 @@ namespace WCFServer.Manager.Provider
                     #endif
                 };
                 endpoint.Behaviors.Add(webHttpBehavior);
-                host.Opened += delegate 
+                host.Opened += delegate
                 {
-                    var log = $"{endpoint.Address} 服务已启动\t{DateTime.Now:yyyy-MM-dd HH:mm:ss}";
+                    var log = $"{endpoint.Address}\t服务已启动\t{DateTime.Now:yyyy-MM-dd HH:mm:ss}";
                     logAction(log);
                 };
                 host.Open();
-                serviceHosts.Add(host);
+                serviceInfo.Host = host;
+                //serviceHosts.Add(host);
+            }
+        }
+
+        /// <summary>
+        /// 关闭服务
+        /// </summary>
+        /// <param name="serviceInfoList">服务接口集合</param>
+        public void CloseService(List<ServiceInfo> serviceInfoList)
+        {
+            foreach (var serviceInfo in serviceInfoList)
+            {
+                serviceInfo.Host.Closed += delegate
+                {
+                    var log = $"{serviceInfo.Config.ServiceName}\t服务已关闭\t{DateTime.Now:yyyy-MM-dd HH:mm:ss}";
+                    serviceInfo.LogAction(log);
+                };
+                serviceInfo.Host.Close();
             }
         }
     }

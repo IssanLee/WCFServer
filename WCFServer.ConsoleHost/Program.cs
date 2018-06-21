@@ -6,7 +6,7 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using WCFServer.Common.Log4Net;
-using WCFServer.Manager.Config;
+using WCFServer.Manager;
 using WCFServer.Manager.Provider;
 
 namespace WCFServer.ConsoleHost
@@ -23,23 +23,13 @@ namespace WCFServer.ConsoleHost
             //Console.WriteLine("WCF服务启动中...");
             Log4Net.Info(typeof(Program), "WCF服务启动中...", true);
 
-            List<ServiceType> serviceTypeList = new List<ServiceType>();
-            ServiceType serviceType = new ServiceType
-            {
-                IntfType = typeof(Service.Demo.Contract.IService),
-                ImplType = typeof(Service.Demo.Implement.Service),
-                WcfConfig = new WcfConfig
-                {
-                    IP = "localhost",
-                    Port = "1028",
-                    Endpoint = "json"
-                },
-                LogAction = Console.WriteLine
-            };
-            //serviceTypeList.Add(serviceType);
-            serviceTypeList = ServiceProvider.Instance.ServiceTypesProvider();
-            ServiceProvider.Instance.AddService(serviceTypeList);
+            List<ServiceInfo> serviceInfoList = new List<ServiceInfo>();
+
+            serviceInfoList = ServiceManager.Instance.ServiceProvider();
+            ServiceManager.Instance.OpenService(serviceInfoList);
             Console.WriteLine("按Q键退出程序...");
+            while (Console.ReadLine() == "C")
+                ServiceManager.Instance.CloseService(serviceInfoList);
             while (Console.ReadLine() != "Q")
                 continue;
         }

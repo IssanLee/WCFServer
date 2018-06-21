@@ -42,10 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\ServiceType.cs" />
-    <Compile Include="Config\WcfConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Provider\ServiceProvider.cs" />
+    <Compile Include="Provider\ServiceInfo.cs" />
+    <Compile Include="Provider\ServiceConfig.cs" />
+    <Compile Include="ServiceManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WCFServer.Common\WCFServer.Common.csproj">

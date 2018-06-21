@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WCFServer.Common;
-
-namespace WCFServer.Manager.Config
+﻿namespace WCFServer.Manager.Provider
 {
     /// <summary>
     /// 服务相关配置
     /// </summary>
-    public class WcfConfig
+    public class ServiceConfig
     {
         /// <summary>
         /// 服务端IP
@@ -37,7 +30,6 @@ namespace WCFServer.Manager.Config
         /// http://localhost:1024/json/XXService/
         /// http://localhost:1024/XXService/
         /// </summary>
-        //public string RomoteFormat { get; set; }
         public string RomoteFormat = "http://{0}:{1}/{2}";
     }
 }

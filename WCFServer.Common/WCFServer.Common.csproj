@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\Singleton.cs" />
+    <Compile Include="Base\TypeHelper.cs" />
     <Compile Include="Logger\Log4Net\Log4Net.cs" />
     <Compile Include="Logger\Nlog\Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

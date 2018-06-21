@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using WCFServer.Manager.Config;
+using WCFServer.Manager;
 using WCFServer.Manager.Provider;
 using WCFServer.WPFApp.Models;
 using WCFServer.WPFApp.Models.Data;
@@ -22,7 +22,7 @@ namespace WCFServer.WPFApp.ViewModels
         /// </summary>
         private readonly IDialogCoordinator _dialogCoordinator;
 
-        public List<ServiceInfo> ServiceInfos { get; set; }
+        public List<InterfaceInfo> ServiceInfos { get; set; }
 
         public TextBox TextBoxCmd;
 
@@ -95,30 +95,16 @@ namespace WCFServer.WPFApp.ViewModels
         #endregion
 
         #region 服务开关
-        private void ServiceSwitch(ServiceInfo serviceInfo)
+        private void ServiceSwitch(InterfaceInfo intfInfo)
         {
-            List<ServiceType> serviceTypeList = new List<ServiceType>();
-            ServiceType serviceType = new ServiceType
-            {
-                IntfType = typeof(Service.Demo.Contract.IService),
-                ImplType = typeof(Service.Demo.Implement.Service),
-                WcfConfig = new WcfConfig
-                {
-                    IP = "localhost",
-                    Port = "1028",
-                    Endpoint = "json"
-                },
-                LogAction = UICmd
-            };
-            if (serviceInfo.ServiceStatus)
-            {
-                //ServiceProvider.Instance.
-            }
+            List<ServiceInfo> serviceInfoList = new List<ServiceInfo>();
+            ServiceInfo serviceInfo = intfInfo.ServiceDetail;
+            serviceInfo.LogAction = UICmd;
+            serviceInfoList.Add(serviceInfo);
+            if (!intfInfo.ServiceStatus)
+                ServiceManager.Instance.CloseService(serviceInfoList);
             else
-            {
-                serviceTypeList.Add(serviceType);
-                ServiceProvider.Instance.AddService(serviceTypeList);
-            }
+                ServiceManager.Instance.OpenService(serviceInfoList);
         }
         #endregion
 
