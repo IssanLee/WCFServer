@@ -1,210 +1,328 @@
-.vs
-WCFServer.Common/bin/Debug/NLog.config
-WCFServer.Common/bin/Debug/NLog.dll
-WCFServer.Common/bin/Debug/NLog.xml
-WCFServer.Common/bin/Debug/WCFServer.Common.dll
-WCFServer.Common/bin/Debug/WCFServer.Common.pdb
-WCFServer.Common/obj/Debug/WCFServer.Common.pdb
-WCFServer.Common/obj/Debug/WCFServer.Common.dll
-WCFServer.Common/obj/Debug/WCFServer.Common.csprojAssemblyReference.cache
-WCFServer.Common/obj/Debug/WCFServer.Common.csproj.FileListAbsolute.txt
-WCFServer.Common/obj/Debug/WCFServer.Common.csproj.CoreCompileInputs.cache
-WCFServer.Common/obj/Debug/WCFServer.Common.csproj.CopyComplete
-WCFServer.Common/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
-WCFServer.Common/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
-WCFServer.Common/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
-WCFServer.Common/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-WCFServer.Common/obj/Debug/DesignTimeResolveAssemblyReferences.cache
-WCFServer.ConsoleHost/bin/Debug/Dapper.dll
-WCFServer.ConsoleHost/bin/Debug/Dapper.xml
-WCFServer.ConsoleHost/bin/Debug/EntityFramework.dll
-WCFServer.ConsoleHost/bin/Debug/EntityFramework.xml
-WCFServer.ConsoleHost/bin/Debug/log4net.dll
-WCFServer.ConsoleHost/bin/Debug/log4net.xml
-WCFServer.ConsoleHost/bin/Debug/NLog.config
-WCFServer.ConsoleHost/bin/Debug/NLog.dll
-WCFServer.ConsoleHost/bin/Debug/NLog.xml
-WCFServer.ConsoleHost/bin/Debug/WCFServer.Common.dll
-WCFServer.ConsoleHost/bin/Debug/WCFServer.Common.pdb
-WCFServer.ConsoleHost/bin/Debug/WCFServer.ConsoleHost.exe
-WCFServer.ConsoleHost/bin/Debug/WCFServer.ConsoleHost.exe.config
-WCFServer.ConsoleHost/bin/Debug/WCFServer.ConsoleHost.pdb
-WCFServer.ConsoleHost/bin/Debug/WCFServer.Data.dll
-WCFServer.ConsoleHost/bin/Debug/WCFServer.Data.dll.config
-WCFServer.ConsoleHost/bin/Debug/WCFServer.Data.pdb
-WCFServer.ConsoleHost/bin/Debug/WCFServer.Manager.dll
-WCFServer.ConsoleHost/bin/Debug/WCFServer.Manager.pdb
-WCFServer.ConsoleHost/bin/Debug/WCFServer.Service.dll
-WCFServer.ConsoleHost/bin/Debug/WCFServer.Service.pdb
-WCFServer.ConsoleHost/bin/Debug/zh-Hans/EntityFramework.resources.dll
-WCFServer.ConsoleHost/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-WCFServer.ConsoleHost/obj/Debug/WCFServer.ConsoleHost.pdb
-WCFServer.ConsoleHost/obj/Debug/WCFServer.ConsoleHost.exe
-WCFServer.ConsoleHost/obj/Debug/WCFServer.ConsoleHost.csprojAssemblyReference.cache
-WCFServer.ConsoleHost/obj/Debug/WCFServer.ConsoleHost.csproj.FileListAbsolute.txt
-WCFServer.ConsoleHost/obj/Debug/WCFServer.ConsoleHost.csproj.CoreCompileInputs.cache
-WCFServer.ConsoleHost/obj/Debug/WCFServer.ConsoleHost.csproj.CopyComplete
-WCFServer.ConsoleHost/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
-WCFServer.ConsoleHost/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
-WCFServer.ConsoleHost/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
-WCFServer.Data/bin/Debug/Dapper.dll
-WCFServer.Data/bin/Debug/Dapper.xml
-WCFServer.Data/bin/Debug/EntityFramework.dll
-WCFServer.Data/bin/Debug/EntityFramework.SqlServer.dll
-WCFServer.Data/bin/Debug/EntityFramework.SqlServer.xml
-WCFServer.Data/bin/Debug/EntityFramework.xml
-WCFServer.Data/bin/Debug/WCFServer.Data.dll
-WCFServer.Data/bin/Debug/WCFServer.Data.dll.config
-WCFServer.Data/bin/Debug/WCFServer.Data.pdb
-WCFServer.Data/bin/Debug/zh-Hans/EntityFramework.resources.dll
-WCFServer.Data/bin/Debug/zh-Hans/EntityFramework.SqlServer.resources.dll
-WCFServer.Data/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-WCFServer.Data/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
-WCFServer.Data/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
-WCFServer.Data/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
-WCFServer.Data/obj/Debug/TempPE/Models.Generated.Database.cs.dll
-WCFServer.Data/obj/Debug/TempPE/PetaPoco.Models.Generated.Database.cs.dll
-WCFServer.Data/obj/Debug/WCFServer.Data.csproj.CopyComplete
-WCFServer.Data/obj/Debug/WCFServer.Data.csproj.CoreCompileInputs.cache
-WCFServer.Data/obj/Debug/WCFServer.Data.csproj.FileListAbsolute.txt
-WCFServer.Data/obj/Debug/WCFServer.Data.csprojAssemblyReference.cache
-WCFServer.Data/obj/Debug/WCFServer.Data.dll
-WCFServer.Data/obj/Debug/WCFServer.Data.pdb
-WCFServer.Manager/bin/Debug/Dapper.dll
-WCFServer.Manager/bin/Debug/Dapper.xml
-WCFServer.Manager/bin/Debug/EntityFramework.dll
-WCFServer.Manager/bin/Debug/EntityFramework.xml
-WCFServer.Manager/bin/Debug/log4net.dll
-WCFServer.Manager/bin/Debug/log4net.xml
-WCFServer.Manager/bin/Debug/NLog.config
-WCFServer.Manager/bin/Debug/NLog.dll
-WCFServer.Manager/bin/Debug/NLog.xml
-WCFServer.Manager/bin/Debug/WCFServer.Common.dll
-WCFServer.Manager/bin/Debug/WCFServer.Common.pdb
-WCFServer.Manager/bin/Debug/WCFServer.Data.dll
-WCFServer.Manager/bin/Debug/WCFServer.Data.dll.config
-WCFServer.Manager/bin/Debug/WCFServer.Data.pdb
-WCFServer.Manager/bin/Debug/WCFServer.Manager.dll
-WCFServer.Manager/bin/Debug/WCFServer.Manager.pdb
-WCFServer.Manager/bin/Debug/WCFServer.Service.dll
-WCFServer.Manager/bin/Debug/WCFServer.Service.pdb
-WCFServer.Manager/bin/Debug/zh-Hans/EntityFramework.resources.dll
-WCFServer.Service/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-WCFServer.Service/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
-WCFServer.Service/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
-WCFServer.Service/obj/Debug/WCFServer.Service.csproj.CoreCompileInputs.cache
-WCFServer.Service/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
-WCFServer.Service/obj/Debug/WCFServer.Service.csproj.FileListAbsolute.txt
-WCFServer.Service/obj/Debug/WCFServer.Service.csprojAssemblyReference.cache
-WCFServer.Service/obj/Debug/WCFServer.Service.dll
-WCFServer.Service/obj/Debug/WCFServer.Service.pdb
-WCFServer.Test/bin/Debug/WCFServer.Service.dll
-WCFServer.Test/bin/Debug/WCFServer.Service.pdb
-WCFServer.Test/bin/Debug/WCFServer.Test.dll
-WCFServer.Test/bin/Debug/WCFServer.Test.pdb
-WCFServer.Test/bin/Debug/xunit.abstractions.dll
-WCFServer.Test/bin/Debug/xunit.assert.dll
-WCFServer.Test/bin/Debug/xunit.assert.pdb
-WCFServer.Test/bin/Debug/xunit.assert.xml
-WCFServer.Test/bin/Debug/xunit.core.dll
-WCFServer.Test/bin/Debug/xunit.core.pdb
-WCFServer.Test/bin/Debug/xunit.core.xml
-WCFServer.Test/bin/Debug/xunit.execution.desktop.dll
-WCFServer.Test/bin/Debug/xunit.execution.desktop.xml
-WCFServer.Test/bin/Debug/xunit.execution.desktop.pdb
-WCFServer.Test/bin/Debug/xunit.runner.utility.desktop.dll
-WCFServer.Test/bin/Debug/xunit.runner.visualstudio.testadapter.dll
-WCFServer.Test4Console/bin/Debug/WCFServer.Service.dll
-WCFServer.Test4Console/bin/Debug/WCFServer.Service.pdb
-WCFServer.Test4Console/bin/Debug/WCFServer.Test4Console.exe
-WCFServer.Test4Console/bin/Debug/WCFServer.Test4Console.exe.config
-WCFServer.Test4Console/bin/Debug/WCFServer.Test4Console.pdb
-WCFServer.Test4Console/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-WCFServer.Test4Console/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
-WCFServer.Test4Console/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
-WCFServer.Test4Console/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
-WCFServer.Test4Console/obj/Debug/WCFServer.Test4Console.csproj.CopyComplete
-WCFServer.Test4Console/obj/Debug/WCFServer.Test4Console.csproj.CoreCompileInputs.cache
-WCFServer.Test4Console/obj/Debug/WCFServer.Test4Console.csproj.FileListAbsolute.txt
-WCFServer.Test4Console/obj/Debug/WCFServer.Test4Console.csprojAssemblyReference.cache
-WCFServer.Test4Console/obj/Debug/WCFServer.Test4Console.exe
-WCFServer.Test4Console/obj/Debug/WCFServer.Test4Console.pdb
-WCFServer.WpfHost/bin/Debug/ControlzEx.dll
-WCFServer.WpfHost/bin/Debug/ControlzEx.pdb
-WCFServer.WpfHost/bin/Debug/Dapper.dll
-WCFServer.WpfHost/bin/Debug/Dapper.xml
-WCFServer.WpfHost/bin/Debug/EntityFramework.xml
-WCFServer.WpfHost/bin/Debug/EntityFramework.dll
-WCFServer.WpfHost/bin/Debug/JetBrains.Annotations.dll
-WCFServer.WpfHost/bin/Debug/JetBrains.Annotations.xml
-WCFServer.WpfHost/bin/Debug/log4net.dll
-WCFServer.WpfHost/bin/Debug/log4net.xml
-WCFServer.WpfHost/bin/Debug/MahApps.Metro.dll
-WCFServer.WpfHost/bin/Debug/MahApps.Metro.pdb
-WCFServer.WpfHost/bin/Debug/MahApps.Metro.xml
-WCFServer.WpfHost/bin/Debug/NLog.config
-WCFServer.WpfHost/bin/Debug/NLog.dll
-WCFServer.WpfHost/bin/Debug/NLog.xml
-WCFServer.WpfHost/bin/Debug/System.Windows.Interactivity.dll
-WCFServer.WpfHost/bin/Debug/WCFServer.Common.dll
-WCFServer.WpfHost/bin/Debug/WCFServer.Common.pdb
-WCFServer.WpfHost/bin/Debug/WCFServer.Data.dll
-WCFServer.WpfHost/bin/Debug/WCFServer.Data.dll.config
-WCFServer.WpfHost/bin/Debug/WCFServer.Data.pdb
-WCFServer.WpfHost/bin/Debug/WCFServer.Manager.dll
-WCFServer.WpfHost/bin/Debug/WCFServer.Manager.pdb
-WCFServer.WpfHost/bin/Debug/WCFServer.Service.dll
-WCFServer.WpfHost/bin/Debug/WCFServer.Service.pdb
-WCFServer.WpfHost/bin/Debug/WCFServer.WpfHost.exe
-WCFServer.WpfHost/bin/Debug/WCFServer.WpfHost.exe.config
-WCFServer.WpfHost/bin/Debug/WCFServer.WpfHost.pdb
-WCFServer.WpfHost/bin/Debug/zh-Hans/EntityFramework.resources.dll
-WCFServer.WpfHost/obj/Debug/App.g.cs
-WCFServer.WpfHost/obj/Debug/App.g.i.cs
-WCFServer.WpfHost/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-WCFServer.WpfHost/obj/Debug/MainWindow.baml
-WCFServer.WpfHost/obj/Debug/MainWindow.g.cs
-WCFServer.WpfHost/obj/Debug/MainWindow.g.i.cs
-WCFServer.WpfHost/obj/Debug/Resources/Icons.baml
-WCFServer.WpfHost/obj/Debug/Resources/IconsNonShared.baml
-WCFServer.WpfHost/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
-WCFServer.WpfHost/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
-WCFServer.WpfHost/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
-WCFServer.WpfHost/obj/Debug/Views/LockDialog.baml
-WCFServer.WpfHost/obj/Debug/Views/LockDialog.g.cs
-WCFServer.WpfHost/obj/Debug/Views/LockDialog.g.i.cs
-WCFServer.WpfHost/obj/Debug/WCFServer.WpfHost.csproj.CoreCompileInputs.cache
-WCFServer.WpfHost/obj/Debug/WCFServer.WpfHost.csproj.CopyComplete
-WCFServer.WpfHost/obj/Debug/WCFServer.WpfHost.csproj.FileListAbsolute.txt
-WCFServer.WpfHost/obj/Debug/WCFServer.WpfHost.csprojAssemblyReference.cache
-WCFServer.WpfHost/obj/Debug/WCFServer.WpfHost.csproj.GenerateResource.cache
-WCFServer.WpfHost/obj/Debug/WCFServer.WpfHost.exe
-WCFServer.WpfHost/obj/Debug/WCFServer.WpfHost.g.resources
-WCFServer.WpfHost/obj/Debug/WCFServer.WpfHost.pdb
-WCFServer.WpfHost/obj/Debug/WCFServer.WpfHost.Properties.Resources.resources
-WCFServer.WpfHost/obj/Debug/WCFServer.WpfHost_MarkupCompile.cache
-WCFServer.WpfHost/obj/Debug/WCFServer.WpfHost_MarkupCompile.i.cache
-WCFServer.WpfHost/obj/Debug/WCFServer.WpfHost_MarkupCompile.i.lref
-WCFServer.WpfHost/obj/Debug/WCFServer.WpfHost_MarkupCompile.lref
-WCFServer.Test/obj/Debug/WCFServer.Test.pdb
-WCFServer.Test/obj/Debug/WCFServer.Test.dll
-WCFServer.Test/obj/Debug/WCFServer.Test.csprojAssemblyReference.cache
-WCFServer.Test/obj/Debug/WCFServer.Test.csproj.FileListAbsolute.txt
-WCFServer.Test/obj/Debug/WCFServer.Test.csproj.CoreCompileInputs.cache
-WCFServer.Test/obj/Debug/WCFServer.Test.csproj.CopyComplete
-WCFServer.Test/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
-WCFServer.Test/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
-WCFServer.Test/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
-WCFServer.Test/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-WCFServer.Service/bin/Debug/WCFServer.Service.pdb
-WCFServer.Service/bin/Debug/WCFServer.Service.dll
-WCFServer.Manager/obj/Debug/WCFServer.Manager.pdb
-WCFServer.Manager/obj/Debug/WCFServer.Manager.dll
-WCFServer.Manager/obj/Debug/WCFServer.Manager.csprojAssemblyReference.cache
-WCFServer.Manager/obj/Debug/WCFServer.Manager.csproj.FileListAbsolute.txt
-WCFServer.Manager/obj/Debug/WCFServer.Manager.csproj.CoreCompileInputs.cache
-WCFServer.Manager/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
-WCFServer.Manager/obj/Debug/WCFServer.Manager.csproj.CopyComplete
-WCFServer.Manager/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
-WCFServer.Manager/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
-WCFServer.Manager/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+## 忽略 Visual Studio 临时文件、生成结果及组件生成文件
+##
+## 具体参考 https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+# Uncomment if you have tasks that create the project's static files in wwwroot
+#wwwroot/
+
+# Visual Studio 2017 auto generated files
+Generated\ Files/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NUNIT
+*.VisualState.xml
+TestResult.xml
+
+# Build Results of an ATL Project
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
+
+# Benchmark Results
+BenchmarkDotNet.Artifacts/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# StyleCop
+StyleCopReport.xml
+
+# Files built by Visual Studio
+*_i.c
+*_p.c
+*_i.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# Chutzpah Test files
+_Chutzpah*
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# Visual Studio Trace Files
+*.e2e
+
+# TFS 2012 Local Workspace
+$tf/
+
+# Guidance Automation Toolkit
+*.gpState
+
+# ReSharper is a .NET coding add-in
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# JustCode is a .NET coding add-in
+.JustCode
+
+# TeamCity is a build add-in
+_TeamCity*
+
+# DotCover is a Code Coverage Tool
+*.dotCover
+
+# AxoCover is a Code Coverage Tool
+.axoCover/*
+!.axoCover/settings.json
+
+# Visual Studio code coverage results
+*.coverage
+*.coveragexml
+
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+# MightyMoose
+*.mm.*
+AutoTest.Net/
+
+# Web workbench (sass)
+.sass-cache/
+
+# Installshield output folder
+[Ee]xpress/
+
+# DocProject is a documentation generator add-in
+DocProject/buildhelp/
+DocProject/Help/*.HxT
+DocProject/Help/*.HxC
+DocProject/Help/*.hhc
+DocProject/Help/*.hhk
+DocProject/Help/*.hhp
+DocProject/Help/Html2
+DocProject/Help/html
+
+# Click-Once directory
+publish/
+
+# Publish Web Output
+*.[Pp]ublish.xml
+*.azurePubxml
+# Note: Comment the next line if you want to checkin your web deploy settings,
+# but database connection strings (with potential passwords) will be unencrypted
+*.pubxml
+*.publishproj
+
+# Microsoft Azure Web App publish settings. Comment the next line if you want to
+# checkin your Azure Web App publish settings, but sensitive information contained
+# in these scripts will be unencrypted
+PublishScripts/
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/[Pp]ackages/*
+# except build/, which is used as an MSBuild target.
+!**/[Pp]ackages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/[Pp]ackages/repositories.config
+# NuGet v3's project.json files produces more ignorable files
+*.nuget.props
+*.nuget.targets
+
+# Microsoft Azure Build Output
+csx/
+*.build.csdef
+
+# Microsoft Azure Emulator
+ecf/
+rcf/
+
+# Windows Store app package directories and files
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+_pkginfo.txt
+*.appx
+
+# Visual Studio cache files
+# files ending in .cache can be ignored
+*.[Cc]ache
+# but keep track of directories ending in .cache
+!*.[Cc]ache/
+
+# Others
+ClientBin/
+~$*
+*~
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+orleans.codegen.cs
+
+# Including strong name files can present a security risk
+# (https://github.com/github/gitignore/pull/2483#issue-259490424)
+#*.snk
+
+# Since there are multiple workflows, uncomment next line to ignore bower_components
+# (https://github.com/github/gitignore/pull/1529#issuecomment-104372622)
+#bower_components/
+
+# RIA/Silverlight projects
+Generated_Code/
+
+# Backup & report files from converting an old project file
+# to a newer Visual Studio version. Backup files are not needed,
+# because we have git ;-)
+_UpgradeReport_Files/
+Backup*/
+UpgradeLog*.XML
+UpgradeLog*.htm
+ServiceFabricBackup/
+*.rptproj.bak
+
+# SQL Server files
+*.mdf
+*.ldf
+*.ndf
+
+# Business Intelligence projects
+*.rdl.data
+*.bim.layout
+*.bim_*.settings
+*.rptproj.rsuser
+
+# Microsoft Fakes
+FakesAssemblies/
+
+# GhostDoc plugin setting file
+*.GhostDoc.xml
+
+# Node.js Tools for Visual Studio
+.ntvs_analysis.dat
+node_modules/
+
+# Visual Studio 6 build log
+*.plg
+
+# Visual Studio 6 workspace options file
+*.opt
+
+# Visual Studio 6 auto-generated workspace file (contains which files were open etc.)
+*.vbw
+
+# Visual Studio LightSwitch build output
+**/*.HTMLClient/GeneratedArtifacts
+**/*.DesktopClient/GeneratedArtifacts
+**/*.DesktopClient/ModelManifest.xml
+**/*.Server/GeneratedArtifacts
+**/*.Server/ModelManifest.xml
+_Pvt_Extensions
+
+# Paket dependency manager
+.paket/paket.exe
+paket-files/
+
+# FAKE - F# Make
+.fake/
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# CodeRush
+.cr/
+
+# Python Tools for Visual Studio (PTVS)
+__pycache__/
+*.pyc
+
+# Cake - Uncomment if you are using it
+# tools/**
+# !tools/packages.config
+
+# Tabs Studio
+*.tss
+
+# Telerik's JustMock configuration file
+*.jmconfig
+
+# BizTalk build output
+*.btp.cs
+*.btm.cs
+*.odx.cs
+*.xsd.cs
+
+# OpenCover UI analysis results
+OpenCover/
+
+# Azure Stream Analytics local run output
+ASALocalRun/
+
+# MSBuild Binary and Structured Log
+*.binlog
+
+# NVidia Nsight GPU debugger configuration file
+*.nvuser
+
+# MFractors (Xamarin productivity tool) working folder
+.mfractor/
